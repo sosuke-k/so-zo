@@ -1,0 +1,8 @@
+
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
+<%= @user.role %>, <%= @user.name %>, <%= @user.email %>
+<br>
+<%= user_path(@user) %>

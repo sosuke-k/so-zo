@@ -1,9 +1,11 @@
 Sozo::Application.routes.draw do
+  resources :users
 
-  get "top/index"
+  # get "top/index"
 
-  get "users/new"
+  # get "users/new"
   match '/signup',  to: 'users#new',            via: 'get'
+  # match '/users/:id', :to => 'users#show', :as => :user, via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
