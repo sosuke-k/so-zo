@@ -5,4 +5,5 @@
 </h1>
 <%= @user.role %>, <%= @user.name %>, <%= @user.email %>
 <br>
-<%= user_path(@user) %>
+<%= link_to "Profile", user_path(@user) %>
+<%= link_to "Sign out", signout_path, :method=>'delete' %>

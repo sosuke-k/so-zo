@@ -11,6 +11,7 @@ describe User do
   it { should respond_to(:role) }
   it { should respond_to(:password_digest) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:remember_token) }
 
   describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
@@ -37,5 +38,10 @@ describe User do
   #   @user.role = 0
   #   it { should be_invalid }
   # end
+
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
+  end
 
 end
