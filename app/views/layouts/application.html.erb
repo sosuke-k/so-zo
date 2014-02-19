@@ -6,6 +6,8 @@
   <title>sO-Zo</title>
   <meta name="keywords" content="ｘｘｘｘｘｘｘｘｘｘｘ" />
   <meta name="description" content="ｘｘｘｘｘｘｘｘｘｘｘｘｘｘｘｘｘ" />
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -20,18 +22,34 @@
 	<link rel="stylesheet" href="/css/lightbox.css" media="screen"/>
 	<script src="/js/modernizr.custom.js"></script>
 
+    <% if !top? %>
+	<link rel="stylesheet" type="text/css" href="/css/meny.css" />
+	<% end %>
+
   <%= csrf_meta_tags %>
 
 </head>
 <body id='top'>
+<% if !top? %>
+<%= render 'shared/meny/content' %>
+<div class='contents'>
+<%= render 'shared/meny/arrow' %>
+<% end %>
+
 <% flash.each do |key, value| %>
   <div class="alert alert-<%= key %>"><%= value %></div>
 <% end %>
+
 <%= render 'layouts/header' %>
 <%= yield %>
 <%= render 'layouts/footer' %>
 <hr>
 <%= debug(params) if Rails.env.development? %>
+
+<% if !top? %>
+</div>
+<!-- contents -->
+<% end %>
 
     <script src="/js/jquery-1.10.2.min.js"></script>
 	<script src="/js/lightbox-2.6.min.js"></script>
@@ -40,6 +58,22 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
+
+    <% if !top? %>
+    <script src="/js/meny.min.js"></script>
+	<script type="text/javascript">
+    	$(function() {
+    		//alert('init meny');
+        	var meny = Meny.create({
+            	menuElement:  $('.meny')[0],
+            	contentsElement:  $('.contents')[0]
+//            menuElement: document.querySelector( '.meny' ),
+//            contentsElement: document.querySelector( '.contents' )
+        	});
+    	});
+
+	</script>
+	<% end %>
 
 </body>
 </html>

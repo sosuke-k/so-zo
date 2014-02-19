@@ -1,0 +1,125 @@
+<div class="container">
+
+<div style="height:50px"></div>
+        <div id="sidernav" style="padding-top:0;">
+      <ul class="sider2">
+        <li><a href="###" class="nav-a">个人情报</a></li>
+        <li><a href="###"  class="nav-b">作  品</a></li>
+        <li><a href="###" class="nav-c">购   入</a></li>
+        <li><a href="###"  class="nav-d">设   定</a></li>
+      </ul>
+    </div>
+      <!--sidernav end-->
+      <div class="r-box">
+
+         <div class="user-img">
+            <img src="/img/demopage/image-11.jpg" />
+            <p style="text-align:center;"><button type="button" class="btn default btn-mini buynow" style="width:80px; font-size:12px;">更改头像</button></p>
+
+
+
+         </div>
+        <div class="form-con">
+
+          <!--form action=""-->
+          <%= form_for(@user) do |f| %>
+            <%= render 'shared/error_messages' %>
+            <p>
+              <!--label for="">名前</label><input type="text" class="txt" value="" /-->
+              <%= f.label :name , "名前" %><%= f.text_field :name , class: "txt" %>
+
+             </p>
+
+                       <p>
+               <!--label for="">I D</label><input type="text" class="txt" value="" /-->
+               <%= f.label :email , "I D"%><%= f.text_field :email , class: "txt txt2" %>
+
+             </p>
+
+            <p>
+              <%= f.label :password , "Password" %><%= f.password_field :password , class: "txt" %>
+            </p>
+            <p>
+              <%= f.label :password_confirmation, "Confirm" %><%= f.password_field :password_confirmation , class: "txt" %>
+            </p>
+
+                       <p>
+               <label for="">一言</label><input type="text" class="txt txt2" value="" />
+
+             </p>
+             <p>SNS</p>
+
+                                 <p>
+               <label for=""><img src="/img/fn.png" /></label><input type="text" class="txt" value="" />
+
+             </p>
+
+                                 <p>
+               <label for=""><img src="/img/fn2.png" /></label><input type="text" class="txt" value="" />
+
+             </p>
+                                              <p>
+               <label for=""><img src="/img/fn3.png" /></label><input type="text" class="txt" value="" />
+
+             </p>
+                                                        <p>
+               <label for="">职业</label>
+               <select name="" class="txt" style="border:1px solid #eee; padding:6px 10px; width:120px; border-radius:4px;">
+
+               <option >学生</option>
+               </select>
+
+             </p>
+
+           <p>标签</p>
+                   <div class="label-box" style="padding-top:0; position:relative; top:-10px;"> <a href="###" class="btn btn-success btn-mini">萌</a><a href="###" class="btn btn-success btn-mini">可爱</a><a href="###" class="btn btn-success btn-mini">赛高</a> </div>
+
+          <p>
+            <!--button type="button" class="btn btn-danger btn-lg buynow" style="width:128px; font-size:12px; margin-left:0; ">Save changes</button-->
+            <%= f.submit "Save changes", class: "btn btn-danger btn-lg buynow", style: "width:128px; font-size:12px; margin-left:0; " %>
+          </p>
+
+
+
+
+
+
+
+
+          <!--/form-->
+          <% end %>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+      <!--form-con end-->
+
+
+
+      </div>
+      <div id="buystep" style=" clear:both;width:1140; overflow:hidden; margin:0 0 0 -15px;">
+       <h1 class="title2"><span>可选形式</span></h1>
+        <ul class="works-list works-list2 works-list3">
+          <li><a href="###"><img src="/img/demopage/image-10.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-9.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-10.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-9.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-10.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-9.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-9.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-10.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-9.jpg" /></a></li>
+          <li><a href="###"><img src="/img/demopage/image-9.jpg" /></a></li>
+        </ul>
+      </div>
+
+  </div>
+  <!-- container -->

@@ -1,9 +1,9 @@
-
+<div class='container'>
 <h1>
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
-<%= @user.role %>, <%= @user.name %>, <%= @user.email %>
+<%= @user.name %>, <%= @user.email %>
 <br>
 <%= link_to "Profile", user_path(@user) %>
-<%= link_to "Sign out", signout_path, :method=>'delete' %>
+</div>
