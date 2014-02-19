@@ -1,31 +1,42 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
+<div id="nav">
     <div class="container">
-      <%= link_to "sample app", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
-          <% if signed_in? %>
-            <li><%= link_to "Users", '#' %></li>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", '#' %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</header>
+        <h1 id="logo">
+            <a href="/"><img src="/img/logo.jpg" alt="sO-Zo" /></a>
+        </h1>
+        <div class="col-sm-1"></div>
+            <ul>
+                <li><a href="ill.html"><div class="menu">イラスト</div></a></li>
+                <li><a href="item.html"><div class="menu">商品</div></a></li>
+                <li><a href="designer.html"><div class="menu">作者</div></a></li>
+                <li><a href="gathering.html"><div class="menu">ギャザリング</div></a></li>
+            </ul>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4" style="margin-top:5px;">
+            <div style="margin-top:5px;">
+            <button type="button" class="btn btn-info btn-md">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+            <button type="button" class="btn btn-success btn-md">
+              <span class="glyphicon glyphicon-user"></span>
+            </button>
+            <button type="button" class="btn btn-primary btn-md">
+              <span class="glyphicon glyphicon-star"></span>
+            </button>
+            <button type="button" class="btn btn-warning btn-md">
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+            </button>
+            </div>
+            <div class="well well-sm" style="margin-top:3px;">
+            0 item - $0.00
+            </div>  <!-- well -->
+            <% if signed_in? %>
+              <%= link_to "Profile", current_user %>
+            <% else %>
+              <%= link_to "Sign up", signup_path %><br>
+              <%= link_to "Sign in", signin_path %>
+            <% end %>
+        </div>  <!-- col 4 -->
+        <div class="clear"></div>
+    </div>  <!-- container -->
+</div>  <!-- nav -->
+<div style="height:76px"></div>
