@@ -118,7 +118,23 @@
           <li><a href="###"><img src="/img/demopage/image-10.jpg" /></a></li>
           <li><a href="###"><img src="/img/demopage/image-9.jpg" /></a></li>
           <li><a href="###"><img src="/img/demopage/image-9.jpg" /></a></li>
+          <% if @illusts.any? %>
+            <%= render @illusts %>
+          <% end %>
         </ul>
+        <%= form_for(@illust) do |f| %>
+          <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+          </div>
+          <div class=field>
+            <%= f.label :image %><br>
+            <%= f.file_field :image %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
       </div>
 
   </div>

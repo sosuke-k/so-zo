@@ -29,6 +29,8 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @illusts = current_user.illusts
+    @illust = current_user.illusts.build if signed_in?
   end
 
   def update
@@ -59,13 +61,6 @@ class UsersController < ApplicationController
     end
 
     # Before actions
-
-    def signed_in_user
-      unless signed_in?
-        # store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
 
     def correct_user
       set_user

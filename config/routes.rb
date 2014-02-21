@@ -1,4 +1,6 @@
 Sozo::Application.routes.draw do
+  resources :illusts, only: [:create, :destroy]
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

@@ -1,0 +1,29 @@
+<h1>Listing illusts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @illusts.each do |illust| %>
+      <tr>
+        <td><%= illust.name %></td>
+        <td><%= illust.user_id %></td>
+        <td><%= link_to 'Show', illust %></td>
+        <td><%= link_to 'Edit', edit_illust_path(illust) %></td>
+        <td><%= link_to 'Destroy', illust, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Illust', new_illust_path %>
