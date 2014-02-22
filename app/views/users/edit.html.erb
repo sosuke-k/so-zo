@@ -129,7 +129,9 @@
           </div>
           <div class=field>
             <%= f.label :image %><br>
+            <%= image_tag @illust.image.thumb.url if @illust.image? %>
             <%= f.file_field :image %>
+            <%= f.hidden_field :image_cache %>
           </div>
           <div class="actions">
             <%= f.submit %>

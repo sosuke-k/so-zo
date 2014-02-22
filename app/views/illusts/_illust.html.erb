@@ -1,3 +1,10 @@
-<% if !illust.nil? %>
-<li>|<%= illust.name %>|<br><%= image_tag illust.image_url %></li>
+<% if illusts_path(illust) != "/illusts" %>
+<li>
+  "<%= illust.name %>"<br>
+  <%= image_tag illust.image_url %><br>
+  <% if signed_in? && current_user?(User.find_by(id: illust.user_id)) %>
+    <%= link_to "delete", illust, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+  </li>
 <% end %>

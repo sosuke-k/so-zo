@@ -29,10 +29,10 @@ class IllustsController < ApplicationController
 
     if @illust.save
       flash[:success] = "Illust created!"
-      redirect_to current_user
+      redirect_to edit_user_path(current_user)
     else
       flash[:error] = "fail to upload"
-      render current_user
+      redirect_to edit_user_path(current_user)
     end
   end
 
@@ -53,11 +53,9 @@ class IllustsController < ApplicationController
   # DELETE /illusts/1
   # DELETE /illusts/1.json
   def destroy
+    set_illust
     @illust.destroy
-    respond_to do |format|
-      format.html { redirect_to illusts_url }
-      format.json { head :no_content }
-    end
+    redirect_to edit_user_path(current_user)
   end
 
   private
